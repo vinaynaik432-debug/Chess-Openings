@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .body {
+        fill: currentColor;
+        stroke: var(--piece-stroke, currentColor);
+        stroke-width: 4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .detail {
+        fill: none;
+        stroke: var(--piece-stroke, currentColor);
+        stroke-width: 4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .cut {
+        fill: none;
+        stroke: var(--piece-stroke, currentColor);
+        stroke-width: 5;
+        stroke-linecap: round;
+      }
+    </style>
+
+    <symbol id="pawn" viewBox="0 0 100 100">
+      <circle class="body" cx="50" cy="25" r="13"/>
+      <path class="body" d="M39 38c0 12-4 22-12 31h46c-8-9-12-19-12-31z"/>
+      <path class="body" d="M23 69h54l7 10H16z"/>
+    </symbol>
+
+    <symbol id="rook" viewBox="0 0 100 100">
+      <path class="body" d="M18 18h15v10h10V18h14v10h10V18h15v20H72l-4 32H32l-4-32H18z"/>
+      <path class="body" d="M25 70h50l8 10H17z"/>
+      <path class="detail" d="M29 39h42M31 68h38"/>
+    </symbol>
+
+    <symbol id="knight" viewBox="0 0 100 100">
+      <path class="body" d="M24 79h58l-7-12H38c1-11 8-17 18-21 8-3 13-10 12-19l9 7c1-15-7-23-20-27L43 4l-1 13c-10 7-16 17-18 29 8-6 15-9 22-9-12 10-19 24-22 42z"/>
+      <circle cx="57" cy="24" r="3.2" fill="var(--piece-stroke, currentColor)"/>
+      <path class="detail" d="M36 28c7 1 13 4 18 9M21 79h64"/>
+    </symbol>
+
+    <symbol id="bishop" viewBox="0 0 100 100">
+      <path class="body" d="M50 10c-10 8-16 17-16 27 0 8 5 14 11 17-4 5-8 10-11 16h32c-3-6-7-11-11-16 6-3 11-9 11-17 0-10-6-19-16-27z"/>
+      <path class="body" d="M27 70h46l10 10H17z"/>
+      <path class="cut" d="M59 22 44 41"/>
+    </symbol>
+
+    <symbol id="queen" viewBox="0 0 100 100">
+      <circle class="body" cx="19" cy="20" r="6"/>
+      <circle class="body" cx="39" cy="13" r="6"/>
+      <circle class="body" cx="61" cy="13" r="6"/>
+      <circle class="body" cx="81" cy="20" r="6"/>
+      <path class="body" d="m20 27 12 40h36l12-40-19 18-11-25-11 25z"/>
+      <path class="body" d="M27 67h46l9 12H18z"/>
+      <path class="detail" d="M28 66h44"/>
+    </symbol>
+
+    <symbol id="king" viewBox="0 0 100 100">
+      <path class="detail" d="M50 6v20M40 16h20"/>
+      <path class="body" d="M50 26c-13 0-23 8-23 19 0 8 5 14 13 18l-7 7h34l-7-7c8-4 13-10 13-18 0-11-10-19-23-19z"/>
+      <path class="body" d="M27 70h46l10 10H17z"/>
+      <path class="detail" d="M50 31v31M33 45h34"/>
+    </symbol>
+  </defs>
+</svg>

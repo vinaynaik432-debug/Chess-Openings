@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opening Habit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <button class="brand" data-route="home" aria-label="Opening Habit home">
+        <span class="brand-mark">♞</span>
+        <span>Opening Habit</span>
+      </button>
+      <span class="free-pill">Free forever</span>
+    </header>
+
+    <main id="app" class="app-shell"></main>
+
+    <template id="home-template">
+      <section class="welcome screen">
+        <p class="eyebrow">Daily chess practice</p>
+        <h1>How do you want to<br /><em>practice today?</em></h1>
+        <p class="intro">
+          Build opening confidence one move at a time. No account, no pressure.
+        </p>
+
+        <div class="choice-grid home-choices">
+          <button class="choice-card featured" data-action="random">
+            <span class="card-icon">↝</span>
+            <span class="card-copy">
+              <strong>Play a random opening</strong>
+              <small>Surprise me with a quick practice line</small>
+            </span>
+            <span class="arrow">→</span>
+          </button>
+          <button class="choice-card" data-route="color">
+            <span class="card-icon">♙</span>
+            <span class="card-copy">
+              <strong>Choose an opening</strong>
+              <small>Practice a line from your repertoire</small>
+            </span>
+            <span class="arrow">→</span>
+          </button>
+        </div>
+
+        <p class="footnote"><span>✦</span> A little practice every day beats cramming.</p>
+      </section>
+    </template>
+
+    <template id="color-template">
+      <section class="screen">
+        <button class="back-button" data-route="home">← Back</button>
+        <p class="eyebrow">Choose an opening</p>
+        <h1>Which side do you<br /><em>want to practice?</em></h1>
+        <p class="intro">Pick a color. We will show you openings that belong in that repertoire.</p>
+
+        <div class="choice-grid color-choices">
+          <button class="color-card" data-color="white">
+            <span class="large-piece white-piece">♔</span>
+            <span>
+              <strong>Openings for White</strong>
+              <small>Start the game with a plan</small>
+            </span>
+            <span class="arrow">→</span>
+          </button>
+          <button class="color-card dark-card" data-color="black">
+            <span class="large-piece">♚</span>
+            <span>
+              <strong>Openings for Black</strong>
+              <small>Answer White with confidence</small>
+            </span>
+            <span class="arrow">→</span>
+          </button>
+        </div>
+      </section>
+    </template>
+
+    <template id="openings-template">
+      <section class="screen opening-screen">
+        <button class="back-button" data-route="color">← Back</button>
+        <p class="eyebrow" id="opening-eyebrow"></p>
+        <h1>Pick your <em>opening.</em></h1>
+        <p class="intro">Choose the opening family first. Each one includes a few useful variations.</p>
+        <div class="opening-toolbar">
+          <input id="opening-search" type="search" placeholder="Search openings" aria-label="Search openings" />
+          <span id="opening-count"></span>
+        </div>
+        <div class="opening-list" id="opening-list"></div>
+      </section>
+    </template>
+
+    <template id="variations-template">
+      <section class="screen opening-screen">
+        <button class="back-button" data-action="back-to-openings">← Back to openings</button>
+        <p class="eyebrow" id="variation-eyebrow"></p>
+        <h1>Pick a <em>variation.</em></h1>
+        <p class="intro" id="variation-intro"></p>
+        <div class="variation-list" id="variation-list"></div>
+      </section>
+    </template>
+
+    <template id="trainer-template">
+      <section class="trainer">
+        <div class="trainer-top">
+          <button class="back-button" data-route="home">← End practice</button>
+          <span class="move-progress" id="move-progress"></span>
+        </div>
+
+        <div class="trainer-grid">
+          <div class="board-column">
+            <div class="board-wrap">
+              <div id="board" class="chess-board" aria-label="Chess board"></div>
+            </div>
+          </div>
+
+          <aside class="lesson-card">
+            <div>
+              <p class="eyebrow" id="lesson-side"></p>
+              <h2 id="lesson-name"></h2>
+              <p class="lesson-variation" id="lesson-variation"></p>
+              <p class="lesson-subtitle" id="lesson-description"></p>
+            </div>
+
+            <div class="move-lesson">
+              <span class="move-number" id="move-number">Ready?</span>
+              <h3 id="move-title">Start from the initial position.</h3>
+              <p id="move-explanation">Press Next to watch the opening unfold one move at a time.</p>
+            </div>
+
+            <div class="notation-wrap">
+              <p class="notation-label">Moves played</p>
+              <div class="notation" id="notation"></div>
+            </div>
+
+            <div class="trainer-actions">
+              <button class="secondary-button" id="previous-button">← Previous</button>
+              <button class="next-button" id="next-button">Next move <span>→</span></button>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
